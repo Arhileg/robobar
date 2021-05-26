@@ -1,4 +1,7 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+
+from .models import Drink
 
 def index(request):
-    return HttpResponse("Наш робобар привентствует тебя странник.")
+    drinks = Drink.objects.order_by('name')
+    return render(request, 'index.html', {'drinks': drinks})
