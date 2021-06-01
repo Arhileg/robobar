@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Главная{% endblock %} :: Robobar</title>
+  </head>
+  <body>
+    <header>
+      <h1>Напитки</h1>
+    </header>
+    <nav>
+      <a href="{% url 'index' %}">Главная</a>
+      <a href="{% url 'add' %}">Добавить</a>
+    </nav>
+    <section>
+      {% block content %}
+      {% endblock %}
+    </section>
+  </body>
+</html>

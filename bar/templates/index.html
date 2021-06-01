@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Robobar</title>
-  </head>
-  <body>
-    <h1>Напитки</h1>
-    {% for drink in drinks %}
-    <div class="">
-      <h2>{{ drink.name }}</h2>
-      <p>цена: {{ drink.price }}</p>
-      <p>кол-во: {{ drink.quantity }}</p>
-    </div>
-    {% endfor %}
-  </body>
-</html>
+{% extends "basic.html" %}
+
+{% block content %}
+{% for drink in drinks %}
+<div class="">
+  <a href="{% url 'by_drink' drink %}">{{ drink.name }}</a>
+</div>
+{% endfor %}
+{% endblock %}
