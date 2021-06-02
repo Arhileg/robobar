@@ -1,9 +1,37 @@
 {% extends "basic.html" %}
 
 {% block content %}
-{% for drink in drinks %}
-<div class="">
-  <a href="{% url 'by_drink' drink %}">{{ drink.name }}</a>
-</div>
-{% endfor %}
+<h2>Menu</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Selling price
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for drink in drinks %}
+        <tr>
+            <td>
+                {{ drink.name }}
+            </td>
+            <td>
+                {{ drink.quantity }}
+            </td>
+            <td>
+                {{ drink.price }}
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
 {% endblock %}

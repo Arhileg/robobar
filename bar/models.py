@@ -1,10 +1,10 @@
 from django.db import models
-import uuid
-
+from django.core.validators import MinValueValidator
+from decimal import Decimal
 
 class Drink(models.Model):
     name = models.CharField(primary_key=True, max_length=50)
-    quantity = models.DecimalField(max_digits=8, decimal_places=2)
+    quantity = models.DecimalField(max_digits=8, decimal_places=2, validators=[MinValueValidator(Decimal('1.0'))])
     price = models.DecimalField(max_digits=8, decimal_places=2)
     def __str__(self):
         return self.name

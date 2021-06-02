@@ -1,0 +1,49 @@
+{% extends "basic.html" %}
+
+{% block content %}
+<h1>Menu</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Data
+            </th>
+            <th>
+                Drink
+            </th>
+            <th>
+                Operation
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Price
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for operation in operations %}
+        <tr>
+            <td>
+                {{ operation.data }}
+            </td>
+            <td>
+                {{ operation.drink }}
+            </td>
+            <td>
+                {{ operation.get_operation_display }}
+            </td>
+            <td>
+                {{ operation.amount }}
+            </td>
+            <td>
+                {{ operation.price }}
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+{% endblock %}

@@ -1,9 +1,9 @@
 from django.urls import path
 
-from .views import index, by_drink, DrinkCreateView
+from .views import DrinkCreateView, index, operations
 
 urlpatterns = [
     path('add/', DrinkCreateView.as_view(), name='add'),
-    path('<str:drink_id>/', by_drink, name='by_drink'),
+    path('operations/', operations, name='operations'),
     path('', index, name='index'),
 ]
