@@ -1,9 +1,9 @@
 {% extends "basic.html" %}
 
-{% block title %}Добавление напитка{% endblock %}
+{% block title %}Supply drink{% endblock %}
 
 {% block content %}
-<h2>Добавление напитка</h2>
+<h2>Supply drink</h2>
 <form method="post" class="w-25">
   {% csrf_token %}
   {{ form.non_field_errors }}

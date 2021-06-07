@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "d:\\PROJECTS\\django_projects\\venv\\Scripts\\python.exe",
+    "editor.wordWrap": "wordWrapColumn",
+    "diffEditor.wordWrap": "on"
+}
